@@ -1,0 +1,49 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundogeometricovirado"
+
+    >
+
+    <EditText
+        android:id="@+id/edtCargoNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Nome do Cargo"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="35dp">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:onClick="onClickCancelar"
+            android:text="Cancelar"
+            android:background="@drawable/formatobotao"
+            android:textColor="#FFFFFF"
+            />
+
+        <Button
+            android:id="@+id/btConfirmar"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:onClick="onClickConfirmar"
+            android:text="Confirmar"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/formatobotao"
+            android:textColor="#FFFFFF"
+            />
+    </LinearLayout>
+</LinearLayout>

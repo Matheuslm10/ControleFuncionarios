@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mathe.controlefuncionarios.Perfis.MostraCargo">
+
+    <TextView
+        android:id="@+id/cargoNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="130dp"
+        android:text="Nome do Cargo Aqui"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="32dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="Quantidade:"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/qtdCargo"
+            android:layout_width="75dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_weight="1"
+            android:text="XX"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.093"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnAlterar"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/formatobotao"
+        android:text="Alterar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/funcionarioNome" />
+
+    <Button
+        android:id="@+id/btnDeletar"
+        android:layout_width="137dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:onClick="onClickDeletar"
+        android:text="Deletar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlterar"
+        android:background="@drawable/formatobotao"
+        android:textColor="#FFFFFF"
+        />
+</LinearLayout>

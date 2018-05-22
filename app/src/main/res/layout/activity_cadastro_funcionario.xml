@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fundogeometricovirado"
+
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center"
+            android:text="Nome:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edtNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center"
+            android:text="Cargo:"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="20dp"
+
+        >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center"
+            android:text="Salário:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edtSalario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:background="@drawable/formatobotao"
+            android:onClick="onClickCancelar"
+            android:text="Cancelar"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btConfirmar"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/formatobotao"
+            android:onClick="onClickConfirmar"
+            android:text="Confirmar"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</LinearLayout>
