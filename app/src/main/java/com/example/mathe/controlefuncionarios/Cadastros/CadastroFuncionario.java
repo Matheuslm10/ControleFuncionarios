@@ -51,17 +51,27 @@ public class CadastroFuncionario extends AppCompatActivity implements OnItemSele
         setTitle("Cadastro de Funcionário");
         funcionario = new Funcionario();
 
+        preencheSpinnerCargos();
         /////preenchendo spinner (menu dropdown)
+        /*
         sp = (Spinner) findViewById(R.id.spinner1);
         sp.setOnItemSelectedListener(this);
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,cargos);
         conectaCargoBD();
         ArrayList<Cargo> arrayCargos = cargoRepositorio.buscarTodos();
+        if(arrayCargos.isEmpty()){
+            Toast toast = Toast.makeText(CadastroFuncionario.this, "Por favor, primeiro, crie um cargo.", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.show();
+            Intent it = new Intent(this, com.example.mathe.controlefuncionarios.Cadastros.CadastroCargo.class);
+            startActivity(it);
+        }
         for(Cargo c : arrayCargos) {
             cargos.add(c.cargoNome);
         }
         sp.setAdapter(adapter);
+        */
         /////
 
         //para caso seja alteracao de dados:
@@ -85,6 +95,40 @@ public class CadastroFuncionario extends AppCompatActivity implements OnItemSele
             funcionario = selectedFunc;
         }
         criarConexao();
+    }
+
+    public void preencheSpinnerCargos(){
+        sp = (Spinner) findViewById(R.id.spinner1);
+        sp.setOnItemSelectedListener(this);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,cargos);
+        conectaCargoBD();
+        ArrayList<Cargo> arrayCargos = cargoRepositorio.buscarTodos();
+        if(arrayCargos.isEmpty()){
+            Toast toast = Toast.makeText(CadastroFuncionario.this, "Por favor, primeiro, crie um cargo.", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.show();
+            Intent it = new Intent(this, com.example.mathe.controlefuncionarios.Cadastros.CadastroCargo.class);
+            startActivity(it);
+        }
+        for(Cargo c : arrayCargos) {
+            cargos.add(c.cargoNome);
+        }
+        sp.setAdapter(adapter);
+    }
+
+    public void preencheSpinnerCargosVolta(){
+        sp = (Spinner) findViewById(R.id.spinner1);
+        sp.setOnItemSelectedListener(this);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,cargos);
+        conectaCargoBD();
+        ArrayList<Cargo> arrayCargos = cargoRepositorio.buscarTodos();
+
+        for(Cargo c : arrayCargos) {
+            cargos.add(c.cargoNome);
+        }
+        sp.setAdapter(adapter);
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -225,5 +269,12 @@ public class CadastroFuncionario extends AppCompatActivity implements OnItemSele
         }
 
         return res;
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        preencheSpinnerCargosVolta();
     }
 }

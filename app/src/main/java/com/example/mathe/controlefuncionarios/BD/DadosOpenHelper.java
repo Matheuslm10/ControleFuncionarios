@@ -14,7 +14,7 @@ public class DadosOpenHelper extends SQLiteOpenHelper {
         StringBuilder sql = new StringBuilder();
 
         sql.append("	CREATE TABLE IF NOT EXISTS funcionario(            		        	   ");
-        sql.append("		funcId INTEGER PRIMARY KEY AUTOINCREMENT,       		           ");
+        sql.append("		funcId INTEGER PRIMARY KEY AUTOINCREMENT,     		               ");
         sql.append("		cargoId INTEGER REFERENCES cargo (cargoId) NOT NULL DEFAULT (''),  ");
         sql.append("		funcNome VARCHAR(200) NOT NULL DEFAULT (''),    		           ");
         sql.append("		salario VARCHAR(200) NOT NULL DEFAULT ('')    			           ");
@@ -48,6 +48,10 @@ public class DadosOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        // Drop older books table if existed
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS funcionario");
 
+        // create fresh books table
+        this.onCreate(sqLiteDatabase);
     }
 }

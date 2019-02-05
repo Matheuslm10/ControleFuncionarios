@@ -40,7 +40,7 @@ public class ListaFuncionarios extends AppCompatActivity {
         setTitle("Lista de Funcionários");
         layoutContentLista = findViewById(R.id.layoutContentLista);
         funcionarioList = findViewById(R.id.funcionarioList);
-        criarConexao();
+        this.criarConexao();
         preencheLista();
 
         funcionarioList.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -82,6 +82,7 @@ public class ListaFuncionarios extends AppCompatActivity {
             dadosOpenHelper = new DadosOpenHelper(this);
             conexao = dadosOpenHelper.getWritableDatabase();
             repositorioFunc = new FuncionarioRepositorio(conexao);
+            System.out.println("repositorio de funcionario criado com sucesso!");
         }catch (SQLException ex){
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
             dlg.setTitle("Erro");
